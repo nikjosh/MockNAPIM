@@ -1,0 +1,90 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.1",
+    "title": "Football_Clubs",
+    "x-lastModified": "Feb 19, 2017 20:49PM PST"
+  },
+  "paths": {
+    "/{name}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            },
+            "examples": {
+              "application/json": {
+                "Club is": "Chelsea"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ]
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            },
+            "examples": {
+              "application/json": {
+                "Form": "Submitted"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "",
+            "required": false,
+            "type": "file",
+            "format": "text"
+          }
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "GiveNewSchemaNameHere": {
+      "type": "object",
+      "properties": {
+        "Form": {
+          "type": "string",
+          "default": "Submitted"
+        }
+      }
+    }
+  }
+}
